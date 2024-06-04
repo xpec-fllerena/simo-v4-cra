@@ -1,0 +1,2 @@
+export const SIMO_VAR = "USER_SIMO";
+export const GROUP_SERVICE_SERIES = "GROUP_SERVICE_SERIES"

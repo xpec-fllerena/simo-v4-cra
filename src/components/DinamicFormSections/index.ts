@@ -1,0 +1,5 @@
+export * as Sources from "components/DinamicFormSections/Sources"
+export * as Couriers from "components/DinamicFormSections/Couriers"
+export * as Coverages from "components/DinamicFormSections/Coverages"
+export * as Schedule from "components/DinamicFormSections/Schedule"
+export * as Locations from "components/DinamicFormSections/Locations"

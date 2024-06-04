@@ -1,0 +1,1 @@
+export { default as CriteriasFields } from "components/DinamicFormSections/Locations/CriteriasFields"

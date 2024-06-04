@@ -1,0 +1,118 @@
+{
+  "_author": "OmnixCorp",
+  "data": [
+    {
+      "name": "Inicio",
+      "type": "normal",
+      "href": "/dashboard",
+      "icon": "home",
+      "position": "top"
+    },
+    {
+      "name": "Órdenes",
+      "type": "collapsible",
+      "icon": "orders",
+      "position": "top",
+      "items": [
+        {
+          "name": "Listado de órdenes",
+          "href": "/orders"
+        },
+        {
+          "name": "Listado de grupo de envíos",
+          "href": "/sgs"
+        }
+      ]
+    },
+    {
+      "name": "Logística",
+      "type": "collapsible",
+      "icon": "logistic",
+      "position": "top",
+      "items": [
+        {
+          "name": "Sources",
+          "href": "/sources"
+        },
+        {
+          "name": "Couriers",
+          "href": "/couriers"
+        },
+        {
+          "name": "Ubicaciones",
+          "href": "/locations"
+        },
+        {
+          "name": "Rutas",
+          "href": "/routes"
+        },
+        {
+          "name": "Coberturas",
+          "href": "/coverages"
+        },
+        {
+          "name": "Agendamiento",
+          "href": "/schedule"
+        },
+        {
+          "name": "Capacidad usada",
+          "href": "/capacity"
+        }
+      ]
+    },
+    {
+      "name": "Inventario",
+      "type": "collapsible",
+      "icon": "inventory",
+      "position": "top",
+      "items": [
+        {
+          "name": "Canales de venta",
+          "href": "/channels"
+        },
+        {
+          "name": "Stock",
+          "href": "/stock"
+        },
+        {
+          "name": "Artículos",
+          "href": "/items"
+        }
+      ]
+    },
+    {
+      "name": "Carga masiva",
+      "type": "normal",
+      "icon": "bulk",
+      "href": "/bulk",
+      "position": "top"
+    },
+    {
+      "name": "Reportes",
+      "type": "normal",
+      "icon": "reports",
+      "href": "/reports",
+      "position": "top"
+    },
+    {
+      "name": "Administración",
+      "type": "normal",
+      "icon": "business",
+      "href": "/business",
+      "position": "top"
+    },
+    {
+      "name": "Configuración",
+      "type": "normal",
+      "icon": "settings",
+      "href": "/settings",
+      "position": "bottom"
+    },
+    {
+      "name": "Cerrar sesión",
+      "type": "normal",
+      "icon": "logout",
+      "position": "bottom"
+    }
+  ]
+}

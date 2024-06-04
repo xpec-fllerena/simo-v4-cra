@@ -1,0 +1,8 @@
+export { default as LocationFields } from "components/DinamicFormSections/Sources/LocationsFields"
+export { default as CustomFields } from "components/DinamicFormSections/Sources/CustomFields"
+export { default as VolumeCapacityFields } from "components/DinamicFormSections/Sources/VolumeCapacityFields"
+export { default as DispatchCapacityFields } from "components/DinamicFormSections/Sources/DispatchCapacityFields"
+export { default as ScheduleFields } from "components/DinamicFormSections/Sources/ScheduleFields"
+export { default as CrossdockFields } from "components/DinamicFormSections/Sources/CrossdockFields"
+export { default as WorkingSessionsFields } from "components/DinamicFormSections/Sources/WorkingSessionsFields"
+export { default as WorkingTimeFields } from "components/DinamicFormSections/Sources/WorkingTimeFields"
