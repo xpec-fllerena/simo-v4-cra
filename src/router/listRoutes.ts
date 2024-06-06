@@ -276,7 +276,7 @@ const listRoutes = [
   // BusinessScreen
   {
     name: "BusinessScreenMainScreen",
-    path: "bussiness",
+    path: "business",
     element: BusinessScreenMainScreen,
   },
   // Dashboard

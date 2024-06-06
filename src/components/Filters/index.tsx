@@ -1,9 +1,7 @@
-
 import { AppContext } from "store/context/AppContext";
 import cn from "classnames";
 import { useLocation } from "react-router-dom";
 import { useCallback, useContext, useEffect } from "react";
-import { createPortal } from "react-dom";
 import { IoIosCloseCircle } from "react-icons/io";
 import OrdersFilter from "./Orders";
 
@@ -24,8 +22,7 @@ const Filters = ({ className }: IFilters) => {
     () => set_open_table_filters(!open_table_filters),
     [open_table_filters, set_open_table_filters]
   );
-
-  return createPortal(
+  return (
     <div className="absolute top-0 left-0 w-full h-screen overflow-x-hidden">
       <div
         className={cn(
@@ -46,8 +43,7 @@ const Filters = ({ className }: IFilters) => {
         </div>
         <OrdersFilter />
       </div>
-    </div>,
-    document?.body
+    </div>
   );
 };
 

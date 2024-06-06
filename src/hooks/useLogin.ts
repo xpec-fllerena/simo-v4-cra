@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import useCancelToken from "hooks/useCancelToken";
 import AuthContext from "store/context/PublicContext";
 import { logInAction, logOutAction } from "store/actions/publicActions";
+import { SIMO_VAR } from "constants/APP_CONSTANTS";
 
 interface ILoginData {
   user: string;
@@ -54,8 +55,9 @@ const useLogin = () => {
   };
 
   const logout_user_action = () => {
+    localStorage.removeItem(SIMO_VAR);
     dispatch(logOutAction);
-    navigate("/");
+    // navigate("/login");
     window.location.reload();
   };
 

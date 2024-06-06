@@ -10,6 +10,6 @@ export const logInAction = (user: any) => {
 };
 
 export const logOutAction = () => {
-  localStorage.removeItem(SIMO_VAR);
+  // localStorage.removeItem(SIMO_VAR);
   return { type: LOGGING_OUT };
 };

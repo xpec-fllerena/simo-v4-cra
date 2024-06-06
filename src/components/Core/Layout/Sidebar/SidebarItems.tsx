@@ -32,7 +32,7 @@ const SidebarItems = ({ sidebar_opened }: any) => {
   );
 
   const ItemCollapsible = ({ name, icon, items }: any) => {
-    const [open_collapse, set_open_collapse] = useState(true);
+    const [open_collapse, set_open_collapse] = useState(false);
     const Icon = icon_sidebar_helper(icon);
 
     const handle_collapse = useCallback(

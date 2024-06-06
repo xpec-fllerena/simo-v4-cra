@@ -15,7 +15,7 @@ export default class Env {
   ];
 
   static defaults = {
-    client: CLIENT.WOM,
+    client: CLIENT.CASAIDEAS,
     env: ENV.DEV,
   };
 }

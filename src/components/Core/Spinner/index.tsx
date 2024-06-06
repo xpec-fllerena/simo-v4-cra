@@ -1,12 +1,13 @@
+import { useContext } from "react";
+import { createPortal } from "react-dom";
 
-import { useContext } from "react"
-import { createPortal } from "react-dom"
+import { AppContext } from "store/context/AppContext";
+import st from "components/Core/Spinner/Spinner.module.css";
 
-import { AppContext } from "store/context/AppContext"
-import st from "components/Core/Spinner/Spinner.module.css"
+const loadingElement = document.getElementById("spinner");
 
 const Spinner = () => {
-  const { loading_app } = useContext(AppContext)
+  const { loading_app } = useContext(AppContext);
 
   const template = (
     <div
@@ -19,11 +20,12 @@ const Spinner = () => {
         <div className={st["spinner"]}></div>
       </div>
     </div>
-  )
+  );
 
-  return loading_app ? createPortal(template, document.body) : null
-}
+  if (!loadingElement) return null;
+  return loading_app ? createPortal(template, loadingElement) : null;
+};
 
-Spinner.displayName = "Spinner"
+Spinner.displayName = "Spinner";
 
-export default Spinner
+export default Spinner;

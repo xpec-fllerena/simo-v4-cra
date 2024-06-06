@@ -9,7 +9,7 @@ import { AppContext } from "store/context/AppContext"
 import NotificationList from "components/Core/Notifications/NotificationList"
 import Spinner from "components/Core/Spinner"
 
-// import Filters from "components/Filters"
+import Filters from "components/Filters"
 
 interface ILayout {
   children: ReactNode
@@ -19,9 +19,9 @@ const Layout = ({ children }: ILayout) => {
   const { open_sidebar } = useContext(AppContext)
 
   return (
-    <div className="relative w-full h-full flex items-center justify-center overflow-x-hidden">
+    <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
       <NotificationList />
-      {/* <Filters /> */}
+      <Filters />
       <Spinner />
       <div className="w-full h-full max-w-[2560px] flex flex-col overflow-hidden">
         <Header />
