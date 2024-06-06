@@ -12,13 +12,13 @@ import { TiUpload } from "react-icons/ti"
 import StatusLoadIndicator from "components/StatusLoadIndicator"
 
 const MainScreen = () => {
-  const { loading_app, data, search_osrm_action } = useSearchOSRM({ entity: "capacities" })
+  const { loading_app, data } = useSearchOSRM({ entity: "capacities" })
   const { current_data, current_page, handle_page_change, handle_per_page, per_page, total_records, total_pages } =
     usePaginationTable({
       data,
     })
 
-  const { control, errors, handleSubmit, setValue } = useForm({
+  const { control } = useForm({
     defaultValues: business_schema,
     schema: schemaValidationBusiness,
   })

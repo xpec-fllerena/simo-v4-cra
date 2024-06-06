@@ -16,7 +16,7 @@ import safety_values from "utils/forms_default/safety_values"
 import schemaValidationSafety from "utils/yup/safety_schema"
 
 const SafetyScreen = () => {
-  const { control, errors, handleSubmit, setValue } = useForm({
+  const { control, handleSubmit } = useForm({
     defaultValues: safety_values,
     schema: schemaValidationSafety,
   })

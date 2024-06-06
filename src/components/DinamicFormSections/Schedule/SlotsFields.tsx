@@ -1,5 +1,5 @@
 
-import { Select, Switch, TextField, TrashButton } from "components/Core"
+import { Select, TextField, TrashButton } from "components/Core"
 import { Controller } from "react-hook-form"
 import { HOURS_OF_DAY } from "constants/FORM_CONSTANTS"
 

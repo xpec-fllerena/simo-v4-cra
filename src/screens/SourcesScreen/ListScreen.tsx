@@ -34,10 +34,10 @@ const ListScreen = () => {
   const any_source_selected = current_data?.find((el: any) => Boolean(el?.source_checked))
 
   const check_source = (id_source: string) => {
-    const source_selected: any = current_data?.find((el: any) => el.id == id_source)
+    const source_selected: any = current_data?.find((el: any) => el.id === id_source)
     set_current_data(
       current_data.map((el: any) => {
-        if (el?.id == source_selected?.id) {
+        if (el?.id === source_selected?.id) {
           return Boolean(source_selected?.source_checked)
             ? { ...el, source_checked: false }
             : { ...el, source_checked: true }

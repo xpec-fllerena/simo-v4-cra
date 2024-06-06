@@ -7,7 +7,7 @@ import { Controller, useFieldArray } from "react-hook-form"
 import { Locations } from "components/DinamicFormSections"
 
 const NewScreen = () => {
-  const { control, errors, handleSubmit, setValue, watch } = useForm({
+  const { control, errors, watch } = useForm({
     defaultValues: location_values,
     schema: schemaValidationLocations,
   })

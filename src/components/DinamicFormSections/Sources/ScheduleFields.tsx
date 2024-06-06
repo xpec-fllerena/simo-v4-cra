@@ -13,7 +13,7 @@ interface IScheduleFields {
 const ScheduleFields = ({ index, control, schedule, errors }: IScheduleFields) => {
   const remove_schedule = () => schedule.remove(index)
   const slots = useFieldArray({ control, name: `schedule[${index}].slots` })
-  const remove_slot = (_i: any) => slots.remove(_i)
+  // const remove_slot = (_i: any) => slots.remove(_i)
   const add_slot = () => slots.append({ from: "", to: "", label: "" })
 
   return (

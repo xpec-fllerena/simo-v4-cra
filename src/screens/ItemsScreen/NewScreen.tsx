@@ -6,7 +6,7 @@ import schemaValidationRoutes from "utils/yup/routes_schema"
 import { Controller } from "react-hook-form"
 
 const NewScreen = () => {
-  const { control, errors, handleSubmit, setValue } = useForm({
+  const { control } = useForm({
     defaultValues: route_values,
     schema: schemaValidationRoutes,
   })

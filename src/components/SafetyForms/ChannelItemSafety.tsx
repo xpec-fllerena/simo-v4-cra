@@ -1,5 +1,5 @@
 import { Controller } from "react-hook-form"
-import { Button, Chip, NumberField, Select, TextField } from "components/Core"
+import { Button, Chip, NumberField, Select } from "components/Core"
 
 const ChannelItemSafety = ({ control }: any) => {
   return (

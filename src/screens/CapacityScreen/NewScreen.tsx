@@ -6,7 +6,7 @@ import capacity_values from "utils/forms_default/capacity_values"
 import schemaValidationCapacity from "utils/yup/capacity_schema"
 
 const NewScreen = () => {
-  const { control, errors, handleSubmit, setValue } = useForm({
+  const { control } = useForm({
     defaultValues: capacity_values,
     schema: schemaValidationCapacity,
   })

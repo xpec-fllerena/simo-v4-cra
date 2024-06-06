@@ -1,6 +1,6 @@
 
 import cn from "classnames"
-import { SlArrowLeft, SlArrowRight } from "react-icons/sl"
+// import { SlArrowLeft, SlArrowRight } from "react-icons/sl"
 import { FiHexagon } from "react-icons/fi"
 
 const DetailHistoryStatus = ({ statusses }: any) => {

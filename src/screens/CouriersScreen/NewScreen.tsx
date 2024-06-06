@@ -51,7 +51,7 @@ const NewScreen = () => {
       <div className="w-full flex flex-col justify-center items-center pt-4 px-6">
         <TitleScreen title="creación de couriers" />
       </div>
-      <form className="w-full flex flex-col py-2 px-4">
+      <form onSubmit={handleSubmit(on_submit)} className="w-full flex flex-col py-2 px-4">
         <div className="w-full flex flex-row items-center justify-end lg:pb-10 py-2">
           <ButtonGroup />
         </div>

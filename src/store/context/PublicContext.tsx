@@ -1,6 +1,7 @@
 import { useReducer } from "react";
 import publicReducer from "store/reducers/publicReducer";
 import { createContext } from "react";
+import { SIMO_VAR } from "constants/APP_CONSTANTS";
 
 interface initialState {
   logged: boolean;
@@ -11,7 +12,7 @@ interface initialState {
 const AuthContext = createContext({} as initialState);
 
 const init = () => {
-  const getUser = localStorage.getItem("user");
+  const getUser = localStorage.getItem(SIMO_VAR);
   const user = getUser && JSON.parse(getUser);
 
   return {

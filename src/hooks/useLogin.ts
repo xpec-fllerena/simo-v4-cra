@@ -30,7 +30,6 @@ const useLogin = () => {
   const navigate = useNavigate();
 
   const login_user_action = async (body: ILoginData) => {
-    console.log("body", body)
     try {
       set_loading_app(true);
       set_error_login({
@@ -39,7 +38,7 @@ const useLogin = () => {
       });
       let {
         data: { message },
-      } = await login_user_service(body, newCancelToken());
+      }: any = await login_user_service(body, newCancelToken());
       const { id, name, role, email, token } = message;
       dispatch(logInAction({ id, name, role, email, token }));
       set_loading_app(false);

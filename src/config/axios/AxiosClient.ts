@@ -1,85 +1,46 @@
-import axios, { AxiosInstance } from "axios";
-import { IProcessEnv } from "interfaces/IProcessEnv";
-import { IAuth } from "interfaces/IUser";
-import { GROUP_SERVICE_SERIES, SIMO_VAR } from "constants/APP_CONSTANTS";
+import axios from "axios";
 import { Env, MultiClient } from "config";
+import OMNIX_MODULE from "constants/OMNIX_MODULE";
 
-export default class AxiosClient {
-  private id: number;
-  private type: string;
-  private client: AxiosInstance;
-  private _process: IProcessEnv;
+const buildUrl = (group: OMNIX_MODULE) => {
+  const _process = process.env;
+  const [_client, _env] = MultiClient.get_user_env(
+    null,
+    Env.clients,
+    Env.env,
+    Env.defaults
+  );
+  const env = _env?.toUpperCase();
+  const currentWebsite = _client?.toUpperCase();
+  const urlBase = _process[`REACT_APP_BASE_${env}_URL_${currentWebsite}`];
+  const urlGroup = _process[`REACT_APP_API_URL_${group}`];
+  return `${urlBase}-${urlGroup}`;
+};
 
-  constructor(type: string) {
-    this.type = type;
-    this._process = process.env;
-    this.client = this.createAxiosInstance(this.type);
-    this.id = new Date().getTime();
+export const axiosClientOSM = axios.create({
+  baseURL: buildUrl(OMNIX_MODULE.OSM),
+});
 
-    this.seInterceptorRequest();
-  }
+export const axiosClientOOM = axios.create({
+  baseURL: buildUrl(OMNIX_MODULE.OOM),
+});
 
-  setTokenAuth(token: any): void {
-    if (token) {
-      this.client.defaults.headers.common["Authorization"] = token;
-    } else {
-      delete this.client.defaults.headers.common["Authorization"];
-    }
-  }
+export const axiosClientOIM = axios.create({
+  baseURL: buildUrl(OMNIX_MODULE.OIM),
+});
 
-  private seInterceptorRequest() {
-    this.client.interceptors.request.use(
-      (config: any) => {
-        if (config.headers.common["Authorization"]) return config;
-        const userAuth: string = localStorage.getItem(SIMO_VAR) || "{}";
-        if (userAuth.match(/user/)) {
-          const { user }: IAuth = JSON.parse(userAuth);
+export const axiosClientOLM = axios.create({
+  baseURL: buildUrl(OMNIX_MODULE.OLM),
+});
 
-          if (user?.token) config.headers.common["Authorization"] = user.token;
-          else delete config.headers.common["Authorization"];
-        }
+export const axiosClientDOWNLOAD = axios.create({
+  baseURL: buildUrl(OMNIX_MODULE.DOWNLOAD),
+});
 
-        return config;
-      },
-      (error) => {
-        return Promise.reject(error);
-      }
-    );
-  }
+export const axiosClientOSRM = axios.create({
+  baseURL: buildUrl(OMNIX_MODULE.OSRM),
+});
 
-  getClient(): AxiosInstance {
-    return this.client;
-  }
-
-  buildUrl(group: string): string {
-    let [_client, env] = MultiClient.get_user_env(
-      null,
-      Env.clients,
-      Env.env,
-      Env.defaults
-    );
-
-    if (group === GROUP_SERVICE_SERIES) {
-      const url: any =
-        this._process[`REACT_APP_${env.toUpperCase()}_URL_LISTENER`.trim()];
-      return `${url}`;
-    }
-
-    const urlBase: any =
-      this._process[
-        `REACT_APP_BASE_${env.toUpperCase()}_URL_${_client.toUpperCase()}`
-      ];
-    const urlGroup: any = this._process[`REACT_APP_API_URL_${group}`];
-    console.log("url", `${urlBase}-${urlGroup}`)
-    return `${urlBase}-${urlGroup}`;
-  }
-
-  createAxiosInstance(group: string): AxiosInstance {
-    return axios.create({
-      baseURL: this.buildUrl(group),
-    });
-  }
-  getId(): number {
-    return this.id;
-  }
-}
+export const axiosClientPRIORITIZATION = axios.create({
+  baseURL: buildUrl(OMNIX_MODULE.PRIORITIZATION),
+});

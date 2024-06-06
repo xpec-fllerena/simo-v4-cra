@@ -17,7 +17,7 @@ import { HOURS_OF_DAY, SHIPPING_TYPES, UNIT_TIME } from "constants/FORM_CONSTANT
 import { Schedule } from "components/DinamicFormSections"
 
 const NewScreen = () => {
-  const { control, errors, handleSubmit, setValue } = useForm({
+  const { control, errors } = useForm({
     defaultValues: schedule_values,
     schema: schemaValidationSchedule,
   })

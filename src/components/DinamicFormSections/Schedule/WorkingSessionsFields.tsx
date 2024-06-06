@@ -1,7 +1,7 @@
 
 import { Select, Switch, TextField, TrashButton } from "components/Core"
 import { Controller } from "react-hook-form"
-import { DAYS_OF_WEEK_NUMBER, HOURS_OF_DAY } from "constants/FORM_CONSTANTS"
+import { HOURS_OF_DAY } from "constants/FORM_CONSTANTS"
 
 interface IWorkingSessionsFields {
   index: number

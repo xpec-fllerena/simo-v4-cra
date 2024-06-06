@@ -6,6 +6,7 @@ import SearchBarFilter from "components/SearchBarFilter"
 import usePaginationTable from "hooks/usePaginationTable"
 import { useEffect } from "react"
 import useSearchOSRM from "hooks/useSearchOSRM"
+import { Link } from "react-router-dom"
 
 const ListScreen = () => {
   const { loading_app, data, search_osrm_action } = useSearchOSRM({ entity: "capacities" })
@@ -58,9 +59,9 @@ const ListScreen = () => {
                       <Table.Cell>{capacity?.type}</Table.Cell>
                       <Table.Cell>{capacity?.date}</Table.Cell>
                       <Table.Cell>
-                        <a href="#" className="font-medium text-[#F9004D] hover:underline">
+                        <Link to="#" className="font-medium text-[#F9004D] hover:underline">
                           Editar
-                        </a>
+                        </Link>
                       </Table.Cell>
                     </Table.Row>
                   ))

@@ -17,7 +17,7 @@ import { DAYS_OF_WEEK_NUMBER, SHIPPING_TYPES, UNIT_TIME } from "constants/FORM_C
 import { Coverages } from "components/DinamicFormSections"
 
 const NewScreen = () => {
-  const { control, errors, handleSubmit, setValue } = useForm({
+  const { control, errors } = useForm({
     defaultValues: coverage_values,
     schema: schemaValidationCoverages,
   })
