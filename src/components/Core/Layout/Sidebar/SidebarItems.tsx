@@ -8,8 +8,10 @@ import { AppContext } from "store/context/AppContext";
 // import { Tooltip } from "components/Core"
 import useLogin from "hooks/useLogin";
 import icon_sidebar_helper from "helpers/icon_sidebar_helper";
+import get_client_color from "utils/get_client_color";
 
 const SidebarItems = ({ sidebar_opened }: any) => {
+  const _color = get_client_color();
   const { set_open_sidebar } = useContext(AppContext);
   const { logout_user_action } = useLogin();
   const selected_path = useLocation();
@@ -44,7 +46,10 @@ const SidebarItems = ({ sidebar_opened }: any) => {
       <div className="w-full">
         <div
           onClick={handle_collapse}
-          className="text-md w-full h-12 flex flex-row items-center justify-between px-6 cursor-pointer hover:text-[#F9004D] hover:bg-[#F0F0F0]"
+          className={cn(
+            "text-md w-full h-12 flex flex-row items-center justify-between px-6 cursor-pointer hover:bg-[#F0F0F0]",
+            `hover:text-[${_color}]`
+          )}
         >
           <div className="flex flex-row items-center justify-start gap-4">
             <Icon className="text-lg" />

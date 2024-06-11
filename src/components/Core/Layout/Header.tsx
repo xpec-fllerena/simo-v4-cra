@@ -1,4 +1,3 @@
-
 import { AppContext } from "store/context/AppContext";
 import PublicContext from "store/context/PublicContext";
 import { useCallback, useContext } from "react";
@@ -12,12 +11,14 @@ import { MdModeEditOutline } from "react-icons/md";
 import logo_omnix_white from "assets/img/logo_omnix_white.svg";
 import { Popover } from "components/Core";
 import useLogin from "hooks/useLogin";
+import get_client_color from "utils/get_client_color";
 
 interface IHeader {
   className?: string;
 }
 
 const Header = ({ className }: IHeader) => {
+  const _color = get_client_color()
   const { user: current_user } = useContext(PublicContext);
   const { open_sidebar, set_open_sidebar } = useContext(AppContext);
   const { logout_user_action } = useLogin();
@@ -26,10 +27,13 @@ const Header = ({ className }: IHeader) => {
     set_open_sidebar(!open_sidebar);
   }, [open_sidebar, set_open_sidebar]);
 
+
   return (
     <div
+      color="primary"
       className={cn(
-        "w-full h-auto flex flex-row items-center justify-between py-4 px-6 lg:px-12 bg-[#F9004D]",
+        "w-full h-auto flex flex-row items-center justify-between py-4 px-6 lg:px-12",
+        `bg-[${_color}]`,
         className
       )}
     >

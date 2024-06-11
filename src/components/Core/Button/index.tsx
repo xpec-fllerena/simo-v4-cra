@@ -1,5 +1,6 @@
 import cn from "classnames"
 import { Button } from "flowbite-react"
+import get_client_color from "utils/get_client_color"
 
 interface IButton {
   label: string
@@ -12,6 +13,8 @@ interface IButton {
 }
 
 const TextField = ({ className, onClick, label, type = "button", disabled, icon: Icon, ...rest }: IButton) => {
+  const _color = get_client_color()
+  
   return (
     <Button
       {...rest}
@@ -21,7 +24,8 @@ const TextField = ({ className, onClick, label, type = "button", disabled, icon:
       label={label}
       disabled={disabled}
       className={cn(
-        "bg-[#F9004D] text-white disabled:bg-slate-500 transform transition duration-500 hover:scale-105 gap-6",
+        "text-white disabled:bg-slate-500 transform transition duration-500 hover:scale-105 gap-6",
+        `bg-[${_color}]`,
         className,
       )}
     >
